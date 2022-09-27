@@ -1,5 +1,6 @@
 import express from "express";
 import UserRouter from "./controllers/users.controller.js";
+import ProductRouter from "./controllers/product.controller.js";
 import logger from "./helpers/middlewares/logger.js";
 import dotenv from "dotenv";
 import errorHandler from "./helpers/middlewares/errorHandler.js";
@@ -12,6 +13,7 @@ app.use(logger);
 
 // -- Routes --
 app.use("/users", UserRouter);
+app.use("/products", ProductRouter);
 
 app.use(errorHandler);
 const PORT = 3000;

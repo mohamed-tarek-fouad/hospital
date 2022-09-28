@@ -10,6 +10,10 @@ const productSchema = Joi.object({
     "string.min": "quantity must be a number",
     "any.required": "quantity is required",
   }),
+  catId: Joi.string().required().min(0).messages({
+    "string.min": "quantity must be a number",
+    "any.required": "quantity is required",
+  }),
 });
 
 export default productSchema;

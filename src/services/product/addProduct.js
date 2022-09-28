@@ -5,11 +5,8 @@ import { okResponse } from "./../../helpers/functions/ResponseHandler.js";
 export function addProduct(req, res, next) {
   try {
     const { name, quantity, catId } = req.body;
-
-    categoryId = cat.find((cat) => {
-      cat.id == catId;
-    });
-    if (categoryId === undefined) {
+    const categoryId = cat.find((c) => c.id == catId);
+    if (!categoryId) {
       return badRequestResponse(res, "there is no category with this id");
     }
 

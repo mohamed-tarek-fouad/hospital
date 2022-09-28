@@ -1,8 +1,8 @@
 export default [
   {
     id: 1,
-    name: "John Adel",
+    name: "Mawlana",
     phoneNumber: "23",
-    email: "",
+    email: "mawlana@gmail.com",
   },
 ];

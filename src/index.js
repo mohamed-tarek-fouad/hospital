@@ -5,12 +5,15 @@ import OrderRouter from "./controllers/order.controller.js";
 import logger from "./helpers/middlewares/logger.js";
 import dotenv from "dotenv";
 import errorHandler from "./helpers/middlewares/errorHandler.js";
+import multer from "multer";
+import { join } from "path";
 dotenv.config();
 const app = express();
 
 // -- Middleware --
 app.use(express.json());
 app.use(logger);
+app.use("/uploads", express.static(join(process.cwd(), "uploads")));
 
 // -- Routes --
 app.use("/users", UserRouter);
